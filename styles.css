@@ -1,0 +1,259 @@
+/* General Reset */
+
+body,html{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url(images/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(247, 108, 171);
+    text-shadow: 0 0 10px rgb(130, 14, 55)
+}
+
+/* Sticky Ads */
+.sticky-ad {
+    position: fixed;
+    top: 100px;
+    z-index: 1000;
+}
+
+#left-ad {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#right-ad {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sticky-ad img {
+    max-width: 100%;
+    display: block;
+    height: 450px;
+    margin-bottom: 10px;
+    width: 300px;
+
+}
+
+.close-ad {
+    display: block;
+    margin-top: 2px;
+    margin-right: 2px;
+    background: rgba(255, 0, 93, 0.565);
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    position: absolute;
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+    border-radius: 0;
+    padding: 5px 5px;
+    z-index: 1; 
+}
+
+.close-ad:hover {
+    background: rgb(255, 0, 93);
+    box-shadow:  0 0 10px rgb(249, 168, 198) ;
+}
+
+/* Sticky Navigation Bar */
+.sticky-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: lightpink;
+    color: rgb(200, 36, 99);
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.sticky-bar a {
+    text-decoration: none;
+    color:  rgb(200, 36, 99);
+    margin: 0 15px;
+    width: 100%;
+}
+
+.sticky-bar a:hover {
+    text-decoration: underline;
+    width: 100%;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 600px;
+    margin: 80px auto;
+    background: rgba(125, 25, 61, 0.623);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(85, 11, 33, 0.786);
+}
+
+/* Form Styling */
+form h1 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    grid-template-columns: 150px 1fr;
+    margin-bottom: auto;
+}
+
+label {
+    font-weight: bold;
+    text-align: right;
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: auto;
+    width: auto;
+}
+
+.name-group {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    align-items: center;
+    margin-bottom: auto;
+}
+
+#name, #surname {
+    flex: 1; /* Ensure both inputs take equal space */
+    margin: 0; /* Reset margin */
+    margin-bottom: auto;
+}
+
+#name {
+    margin-left: 20px; /* Add specific spacing to Name input */
+}
+
+#email{
+    margin-left: 30px;
+    margin-bottom: auto;
+}
+
+#areaCode {
+    margin-left: 30px;
+}
+
+#subject{
+    margin-left: 15px;
+}
+
+.name-group input {
+    width: 30%; 
+}
+
+.phone-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.phone-group select {
+    width: 19%; /* Area code dropdown width */
+}
+
+.phone-group input {
+    width: 45%; /* Phone number input width */
+}
+
+.radio-group{
+    display: flex;
+    gap: 5px;
+    grid-template-columns: auto auto; 
+    align-items: center;
+}
+
+.radio-group label {
+    margin: 0;
+}
+
+.radio-group label:first-child {
+    margin-right: 50px; /* "Gender" yazısı ile altındaki buton grubu arasındaki boşluk */
+}
+
+.radio-group div {
+    display: flex; /* Radio butonlar ve yazıları yatay hizala */
+    align-items: center; /* Dikey hizalama */
+    gap: 10px; /* Her buton ile yazı arasındaki mesafe */
+}
+
+
+input, select, button {
+    width: 70%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.radio-group [type="radio"]{
+ width: auto;
+ margin-right: -5px;
+}
+
+input,select{
+    flex: 1; /* Input takes the remaining space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background: rgba(255, 182, 193, 0.757);
+    color: rgb(231, 7, 89);
+    cursor: pointer;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: rgb(250, 178, 189);
+    box-shadow:  0 0 10px rgba(226, 54, 117, 0.848) ;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .form-group{
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+
+    label{
+        text-align: left; /* Sol hizala */
+        margin-right: 0; /* Sağ marjin kaldır */
+        margin-bottom: auto;
+    }
+    
+    .phone-group {
+        flex-direction: column;
+    }
+
+    .radio-group {
+        flex-direction: column;
+    }
+
+    .sticky-ad {
+        display: none;
+    }
+}
